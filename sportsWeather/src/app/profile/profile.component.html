@@ -1,0 +1,136 @@
+<h2>
+  Profile
+</h2>
+
+<div class="profile-box">
+  <h4>
+    Profile Information for {{getUsername()}}
+  </h4>
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Username</th>
+      <th scope="col">Password</th>
+      <th scope="col">User Type</th>
+      <th scope="col">City</th>
+      <th scope="col">State</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>{{user.id}}</td>
+      <td>{{user.firstName}}</td>
+      <td>{{user.lastName}}</td>
+      <td>{{user.username}}</td>
+      <td>{{user.password}}</td>
+      <td>{{user.userType}}</td>
+      <td>{{user.city}}</td>
+      <td>{{user.state}}</td>
+      <td>
+        <button>Edit</button>
+      </td>
+      <td>
+        <button>Update</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<h6>Update</h6>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Username</th>
+    <th>Password</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Update</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td><input [(ngModel)]="newUser.firstName" class="form-control" placeholder="First Name"/></td>
+    <td><input [(ngModel)]="newUser.lastName" class="form-control" placeholder="Last Name"/></td>
+    <td><input [(ngModel)]="newUser.username" class="form-control" placeholder="Last Name"/></td>
+    <td><input [(ngModel)]="newUser.password" class="form-control" placeholder="Password"/></td>
+    <td><input [(ngModel)]="newUser.city" class="form-control" placeholder="City"/></td>
+    <td><input [(ngModel)]="newUser.state" class="form-control" placeholder="State"/></td>
+    <td><button class="btn btn-danger" (click)="updateUser()"> Update User</button></td>
+  </tr>
+  </tbody>
+</table>
+
+<div class="not-basic-box" id="notBasicBox">
+<div class="profile-box">
+  <h3>
+    Comments
+  </h3>
+
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">Comment</th>
+      <th scope="col"># of Likes</th>
+      <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let aComment of commentsByUser">
+      <td>{{aComment.content}}</td>
+      <td>{{aComment.likes}}</td>
+      <td>
+        <button (click)="updateThisComment(aComment)">Update This Comment</button>
+      </td>
+      <td>
+        <button (click)="deleteComment(aComment)">Delete</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <input [(ngModel)]="newCommentContent" class="form-control" placeholder="New Content of Comment"/>
+</div>
+
+<div class="watchlist-box" id="watchlistBoxID">
+<app-list-of-watchlists></app-list-of-watchlists>
+</div>
+</div>
+
+<h6>Users</h6>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Username</th>
+    <th>View Comments </th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let user of userz">
+    <td>{{user.username}}</td>
+    <td><button (click)="retrieveComments(user.username)" class="btn btn-danger">View User's Comments</button></td>
+  </tr>
+  </tbody>
+</table>
+
+<div id="otherUsers" class="other-user-box">
+<h2>{{userWeHaveComments}}'s Comments</h2>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Comment</th>
+    <th>Likes</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let comm of userComments">
+    <td>{{comm.content}}</td>
+    <td>{{comm.likes}}</td>
+  </tr>
+  </tbody>
+</table>
+</div>

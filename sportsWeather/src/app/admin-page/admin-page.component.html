@@ -1,0 +1,107 @@
+<div class="col-md-6 align-content-center">
+  <h2> Admin Details</h2>
+
+  <h6>Users</h6>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Id</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Username</th>
+      <th>Password</th>
+      <th>Verified Password</th>
+      <th>City</th>
+      <th>State</th>
+      <th>User Type</th>
+      <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{user.id}}</td>
+      <td>{{user.firstName}}</td>
+      <td>{{user.lastName}}</td>
+      <td>{{user.username}}</td>
+      <td>{{user.password}}</td>
+      <td>{{user.verifyPassword}}</td>
+      <td>{{user.city}}</td>
+      <td>{{user.state}}</td>
+      <td>{{user.userType}}</td>
+      <td><button class="btn btn-danger" (click)="deleteUser(user)"> Delete User</button></td>
+    </tr>
+    </tbody>
+  </table>
+  <br>
+  <br>
+  <hr>
+
+
+  <h6>Create or Update a User</h6>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>User Id </th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Username</th>
+      <th>Password</th>
+      <th>Verified Password</th>
+      <th>City</th>
+      <th>State</th>
+      <th>User Type</th>
+      <th>Create</th>
+      <th>Update</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td><input [(ngModel)]="user.id" class="form-control" placeholder="First Name"/></td>
+      <td><input [(ngModel)]="user.firstName" class="form-control" placeholder="First Name"/></td>
+      <td><input [(ngModel)]="user.lastName" class="form-control" placeholder="Last Name"/></td>
+      <td><input [(ngModel)]="user.username" class="form-control" placeholder="Username"/></td>
+      <td><input [(ngModel)]="user.password" class="form-control" placeholder="Password"/></td>
+      <td><input [(ngModel)]="user.verifyPassword" class="form-control" placeholder="Verify Password"/></td>
+      <td><input [(ngModel)]="user.city" class="form-control" placeholder="City"/></td>
+      <td><input [(ngModel)]="user.state" class="form-control" placeholder="State"/></td>
+      <td><select [(ngModel)]="user.userType" id="userType">
+        <option value="Fan">Fan</option>
+        <option value="Player">Athlete</option>
+        <option value="Team">Team Management</option>
+        <option value="Basic-User">Basic User</option>
+        <option value="Admin">Admin</option>
+      </select></td>
+      <td><button class="btn btn-danger" (click)="onSubmit()"> Create User</button></td>
+      <td><button class="btn btn-danger" (click)="updateUser()"> Update User</button></td>
+    </tr>
+    </tbody>
+  </table>
+  <br>
+  <br>
+  <hr>
+
+  <h6>Monitor Comments</h6>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Comment</th>
+      <th># of Likes</th>
+      <th>Update</th>
+      <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let comment of comments">
+      <td>{{comment.content}}</td>
+      <td>{{comment.likes}}</td>
+      <td><button class="btn btn-danger" (click)="deleteComment(comment)"> Delete </button></td>
+      <td><button class="btn btn-danger" (click)="updateThisComment(comment)"> Update </button></td>
+    </tr>
+    </tbody>
+  </table>
+  <input [(ngModel)]="newCommentContent" class="form-control" placeholder="New Content of Comment"/>
+
+
+
+</div>
+

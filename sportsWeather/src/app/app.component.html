@@ -1,0 +1,19 @@
+<div class="container-fluid">
+
+  <nav class="navbar">
+  <h1 class="text-center header-format"><a href="#">{{title}}</a></h1>
+    <p>Hello {{currentUser}}!</p>
+  <app-player-search></app-player-search>
+  <div class="btn-group btn-group-toggle" data-toggle="buttons">
+    <button type="button" id="watchlist-button" class="btn-large menu-button wButton"><a routerLink="list-of-watchlists">Watchlist</a></button>
+    <button type="button" class="btn-large menu-button"><a routerLink="register">Register</a></button>
+    <button type="button" class="btn-large menu-button"><a routerLink="login">Login</a></button>
+    <button type="button" id="profile-button" class="btn-large menu-button pButton"><a routerLink="profile">Profile</a></button>
+    <button type="button" id="admin-button" class="btn-large menu-button aButton"><a routerLink="admin-page">Admin</a></button>
+  </div>
+</nav>
+
+  <router-outlet></router-outlet>
+
+
+</div>

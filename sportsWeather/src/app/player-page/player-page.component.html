@@ -1,0 +1,81 @@
+<h3>Name: {{this.player.firstName}} {{this.player.lastName}} </h3>
+<h5>Jersey Number: {{this.player.jerseyNum}}</h5>
+<h5>Position: {{this.player.type}}</h5>
+<h5>User Likes: {{this.player.likes}}</h5>
+<span>
+  <button class="btn aWatch" id="addWatchlistButton"
+          (click)="addToWatchList(this.player.firstName,this.player.lastName)"
+          style="background-color: lightblue; margin: 10px">Add Player to Watchlist</button>
+  <button class="btn likeButton" id="likePlayerButton"
+          (click)="addLikeToPlayer(this.player.firstName,this.player.lastName)"
+          style="background-color: lightgreen; margin: 10px">Like Player</button>
+</span>
+<hr>
+<h3>Game Logs</h3>
+
+<app-receiver-table *ngIf=this.receiverDisplay></app-receiver-table>
+<app-quarterback-table *ngIf=this.quarterbackDisplay></app-quarterback-table>
+<app-runningback-table *ngIf=this.runningbackDisplay></app-runningback-table>
+<div id="giantDIV" class="aGiantDIV">
+<div  id="commentBox"  class="total-average-box aCommentBox">
+    <h4>
+      Add a Comment
+    </h4>
+    <input [(ngModel)]="comment.username" class="form-control" placeholder="Author"/>
+    <textarea [(ngModel)]="comment.content" rows="4" cols="50" name="comment" form="comment-form"
+              placeholder="Enter comment here....">
+  </textarea>
+    <form id="comment-form">
+      <input type="submit" (click)="createPlayerComment()">
+    </form>
+  </div>
+
+<hr>
+<h3>COMMENTS</h3>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Username</th>
+    <th>Content</th>
+    <th>Likes</th>
+    <th>React to Comment</th>
+    <th></th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let comment of comments">
+    <td>{{comment.userName}}</td>
+    <td>{{comment.content}}</td>
+    <td>{{comment.likes}}</td>
+    <td>
+      <button id="like-button" class="btn" (click)="clickedFunctions(comment); ">Like This Comment</button>
+      <button class="btn aReplyButton" id="replyButton" (click)="createReply(comment.content)">Add Your Reply To This Comment</button>
+      <button class="btn" (click)="fetchReplies(comment)">Show Responses</button>
+    </td>
+  </tbody>
+</table>
+
+  <div class="reply-box input-reply-box" id="replyInput">
+    <input [(ngModel)]="athleteReply" class="form-control" placeholder="Author"/>
+    <input name="yay" placeholder="Leave a Reply" class="form-control" [(ngModel)]="this.reply.content"/>
+  </div>
+
+
+<hr>
+<h3>RESPONSES TO THAT COMMENT </h3>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Username</th>
+    <th>Reply Content</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let reply of replies">
+    <td>{{reply.userName}}</td>
+    <td>{{reply.content}}</td>
+  </tbody>
+</table>
+</div>

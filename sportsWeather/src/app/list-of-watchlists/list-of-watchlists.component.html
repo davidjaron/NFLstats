@@ -1,0 +1,25 @@
+<div class="watchlist-box">
+  <h4>
+    My Watchlist
+  </h4>
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">Player Name</th>
+      <th scope="col">View Player</th>
+      <th scope="col">Delete Player From Watchlist</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let player of players">
+      <td>{{player.firstName}} {{player.lastName}}</td>
+      <td>
+        <button (click)="goToPlayerPage(player.firstName,player.lastName)">View</button>
+      </td>
+      <td>
+        <button (click)="deletePlayerFromWatchList(player.firstName, player.lastName)">Delete From Watchlist</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

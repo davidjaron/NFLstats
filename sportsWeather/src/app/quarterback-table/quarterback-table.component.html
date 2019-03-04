@@ -1,0 +1,28 @@
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Game Date</th>
+    <th>Passing Attempts</th>
+    <th>Passing Completions</th>
+    <th>Passing Yards</th>
+    <th>Passing Touchdowns</th>
+    <th>Interceptions</th>
+    <th>Completion Percentage</th>
+    <th>Quarterback Rating</th>
+    <th>Longest Completion</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let gamelog of gamelogs">
+    <td>{{gamelog.gameDate}}</td>
+    <td>{{gamelog.passAttempts}}</td>
+    <td>{{gamelog.passCompletions}}</td>
+    <td>{{gamelog.passYards}}</td>
+    <td>{{gamelog.passTD}}</td>
+    <td>{{gamelog.passInt}}</td>
+    <td>{{gamelog.passPct}}</td>
+    <td>{{gamelog.qbRating}}</td>
+    <td>{{gamelog.passLng}}</td>
+  </tr>
+  </tbody>
+</table>

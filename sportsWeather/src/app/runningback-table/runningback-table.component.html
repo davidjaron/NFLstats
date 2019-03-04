@@ -1,0 +1,28 @@
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Game Date</th>
+    <th>Rushing Attempts</th>
+    <th>Rushing Yards</th>
+    <th>Yds per Attempt</th>
+    <th>Rushing TDs</th>
+    <th>Longest Rush</th>
+    <th>Receptions</th>
+    <th>Receiving Yards</th>
+    <th>Receiving TDs</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let gamelog of gamelogs">
+    <td>{{gamelog.gameDate}}</td>
+    <td>{{gamelog.rushAttempts}}</td>
+    <td>{{gamelog.rushYards}}</td>
+    <td>{{gamelog.rushAvg}}</td>
+    <td>{{gamelog.rushTD}}</td>
+    <td>{{gamelog.rushLong}}</td>
+    <td>{{gamelog.receptions}}</td>
+    <td>{{gamelog.recYards}}</td>
+    <td>{{gamelog.recTD}}</td>
+  </tr>
+  </tbody>
+</table>

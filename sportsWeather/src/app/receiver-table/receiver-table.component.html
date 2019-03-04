@@ -1,0 +1,28 @@
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Game Date</th>
+    <th>Receptions</th>
+    <th>Receiving Yards</th>
+    <th>Receiving Touchdowns</th>
+    <th>Rec. 20+ yds.</th>
+    <th>Rec. 40+ yds.</th>
+    <th>Targets</th>
+    <th>Longest Rec.</th>
+    <th>First Downs</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let gamelog of gamelogs">
+    <td>{{gamelog.gameDate}}</td>
+    <td>{{gamelog.receptions}}</td>
+    <td>{{gamelog.recYards}}</td>
+    <td>{{gamelog.recTD}}</td>
+    <td>{{gamelog.rec20Plus}}</td>
+    <td>{{gamelog.rec40Plus}}</td>
+    <td>{{gamelog.targets}}</td>
+    <td>{{gamelog.recLng}}</td>
+    <td>{{gamelog.recFirstDowns}}</td>
+  </tr>
+  </tbody>
+</table>

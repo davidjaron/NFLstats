@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+    </div>
+    <div class="col">
+      <h2 class="text-center">Register</h2>
+      <p>
+        <input [(ngModel)]="user.firstName" class="form-control" placeholder="First Name"/>
+        <input [(ngModel)]="user.lastName" class="form-control" placeholder="Last Name"/>
+        <input [(ngModel)]="user.username" class="form-control" placeholder="Username"/>
+        <input [(ngModel)]="user.password" class="form-control" placeholder="Password"/>
+        <input [(ngModel)]="user.verifyPassword" class="form-control" placeholder="Verify Password"/>
+        <input [(ngModel)]="user.city" class="form-control" placeholder="City"/>
+        <input [(ngModel)]="user.state" class="form-control" placeholder="State"/>
+        <label>User Type: </label>
+        <select [(ngModel)]="user.userType" id="userType">
+          <option value="Fan">Fan</option>
+          <option value="Player">Athlete</option>
+          <option value="Team">Team Management</option>
+          <option value="Basic-User">Basic User</option>
+          <option value="Admin">Admin</option>
+        </select>
+        <button (click)="onSubmit()"
+                class="btn btn-primary btn-block">
+          Register
+        </button>
+      </p>
+    </div>
+    <div class="col">
+    </div>
+  </div>
+</div>

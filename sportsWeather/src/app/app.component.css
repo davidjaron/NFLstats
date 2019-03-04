@@ -1,0 +1,44 @@
+.menu-button {
+  margin: 5px;
+  border-width: .2rem;
+}
+
+.btn-group {
+  text-align: center;
+}
+
+.navbar {
+  background-color: lightgray;
+  opacity: 80%;
+  border-bottom: 2px solid rgb(0,0,0);
+  padding-bottom: 15px;
+  margin: 0 0 10px 0;
+  left: 0;
+  right: 0;
+  -webkit-box-shadow:0px 0px 0px #000;
+  -moz-box-shadow:0px 0px 0px #000;
+  box-shadow:0px 1px 1px #000;
+}
+
+h1 a:hover{
+  text-decoration: none;
+}
+
+a {
+  color: black !important;
+}
+
+.wButton {
+  visibility: hidden;
+}
+
+.aButton {
+  visibility: hidden;
+}
+
+.pButton {
+  visibility: hidden;
+}
+
+
+

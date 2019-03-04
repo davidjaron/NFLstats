@@ -1,0 +1,28 @@
+
+
+<div>
+  <h4>
+    Search Results:
+  </h4>
+
+  <table class="table" style="margin-top: 10px">
+    <thead>
+    <tr>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Jersey Number</th>
+      <th scope="col">View Player</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let player of players">
+      <td>{{player.firstName}}</td>
+      <td>{{player.lastName}}</td>
+      <td>{{player.jerseyNum}}</td>
+      <td>
+        <button (click)="goToPage(player.firstName,player.lastName)">View</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
